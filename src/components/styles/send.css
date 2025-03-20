@@ -1,0 +1,15 @@
+#send_btn.active #plane {
+  animation-name: plane;
+  animation-duration: 2s;
+}
+
+@keyframes plane {
+  0%{
+    transform: translate(0);
+  } 50% {
+    transform: translateX(-20px) translateY(20px);
+  } 100% {
+    transform: translateX(100px) translateY(-100px);
+
+  }
+}

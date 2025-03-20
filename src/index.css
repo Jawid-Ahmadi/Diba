@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([theme=dark],[theme=dark] *));
+
+@font-face {
+  font-family: poppins;
+  font-style: normal;
+  src: url("./assets/fonts/Poppins-Light.ttf") format("ttf");
+}
+@font-face {
+  font-family: poppins-md;
+  font-style: normal;
+  src: url("./assets/fonts/Poppins-Medium.ttf") format("ttf");
+}
+@font-face {
+  font-family: rubik;
+  font-style: normal;
+  src: url("./assets/fonts/Rubik-Light.ttf") format("ttf");
+}
+@font-face {
+  font-family: rubik-md;
+  font-style: normal;
+  src: url("./assets/fonts/Rubik-Medium.ttf") format("ttf");
+}
+@font-face {
+  font-family: loud;
+  src: url("./assets/fonts/Shrikhand-Regular.ttf");
+}
+
+@theme {
+  --font-poppins: poppins,sans-serif;
+  --font-poppins-md: poppins-md,sans-serif;
+  --font-rubik: rubik,sans-serif;
+  --font-rubik-md: rubik-md,sans-serif;
+  --color-primary: #001f40;
+  --font-loud: loud,sans-serif;
+  --color-secondary: #e2eeec;
+  --color-red-1: #e8505b;
+  --color-blue-1: #51a5f3;
+}
+
+*::selection {
+  background: pink;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade-In Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(90px);
+  transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
+}
+
+.newArival img#img {
+  transition: 0.5s;
+  transition-delay: 0.9s;
+  transform: translateX(-100%);
+}
+.newArival.visible img#img {
+  transform: translate(0);
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0px);
+}
+.fade-in.visibleHero {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* THEME OPTIONS & TOGGLERS  */
+ [theme='light'] {
+  transition: all 0.5s ease;
+  background-color: white;
+  color: #001f40;
+}
+[theme='dark']  {
+  transition: all 0.5s ease;
+  background-color: #001f40;
+  color: white !important;
+  border-bottom-color: white;
+}
+
+
+[theme='dark'] #theme_bg {
+  animation-name: dark;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+[theme='light'] #theme_bg {
+  animation-name: light;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dark {
+  0%{
+    left: 0;
+  } 50% {
+    width: 76px; 
+    left: 0;
+  } 100% {
+    width: 32px;
+    left: 46px;
+  }
+  
+}
+@keyframes light {
+  0%{
+    width: 32px;
+    left: 46px;
+  } 50% {
+    width: 76px; 
+    left: 0;
+  } 100% {
+    
+  }
+  
+}
